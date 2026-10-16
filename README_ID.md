@@ -34,3 +34,14 @@ Aplikasi monitor untuk Canon EOS 600D melalui HDMI → UVC capture card → USB-
 
 ## Dependensi
 Library UVC: `org.uvccamera:lib:0.1.0` (Apache 2.0; upstream dan detail: https://alexey-pelykh.com/UVCCamera/).
+
+
+## Membuat APK tanpa Android Studio (GitHub Actions)
+1. Buat akun/login di https://github.com.
+2. Buat repository baru, misalnya `CanonHDMIMonitor`.
+3. Unggah seluruh isi ZIP proyek ini ke repository pada branch `main` (termasuk folder tersembunyi `.github`).
+4. Buka tab **Actions**. Workflow **Build Canon HDMI Monitor APK** akan berjalan setelah push; atau pilih **Run workflow**.
+5. Jika berhasil, buka hasil workflow dan unduh artifact `CanonHDMIMonitor-debug-apk`. Di dalamnya ada `app-debug.apk`.
+6. Pindahkan APK ke HP dan izinkan instalasi dari sumber tersebut bila Android meminta.
+
+Jika build gagal, buka log workflow dan periksa langkah **Build debug APK**. Build cloud menghilangkan kebutuhan memasang Android Studio di PC, tetapi tetap memerlukan internet dan akun GitHub. APK yang berhasil dibangun tetap perlu diuji pada HP + capture card.
